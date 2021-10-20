@@ -138,37 +138,4 @@ namespace UsmToolkit
             }
         }
     }
-
-    [Command(Description = "Setup ffmpeg and vgmstream needed for conversion")]
-    public class GetDependenciesCommand
-    {
-        protected int OnExecute(CommandLineApplication app)
-        {
-            DepsConfig conf = JsonConvert.DeserializeObject<DepsConfig>(File.ReadAllText("deps.json"));
-            WebClient client = new WebClient();
-
-            Console.WriteLine($"Downloading ffmpeg from {conf.FFmpeg}");
-            client.DownloadFile(conf.FFmpeg, "ffmpeg.zip");
-
-            Console.WriteLine($"Extracting ffmpeg...");
-            using (ZipArchive archive = ZipFile.OpenRead("ffmpeg.zip"))
-            {
-                var ent = archive.Entries.FirstOrDefault(x => x.Name == "ffmpeg.exe");
-                if (ent != null)
-                {
-                    ent.ExtractToFile("ffmpeg.exe", true);
-                }
-            }
-            File.Delete("ffmpeg.zip");
-
-            Console.WriteLine($"Downloading vgmstream from {conf.Vgmstream}");
-            client.DownloadFile(conf.Vgmstream, "vgmstream.zip");
-
-            Console.WriteLine("Extracting vgmstream...");
-            ZipFile.ExtractToDirectory("vgmstream.zip", "vgmstream", true);
-            File.Delete("vgmstream.zip");
-
-            return 0;
-        }
-    }
 }
