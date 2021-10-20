@@ -4,7 +4,7 @@ Tool to convert USM video files into user-friendly formats.
 
 ## Getting started
 
-Download the latest version and run `UsmToolkit get-dependencies`. This will download ffmpeg and vgmstream from the URLs provided in `deps.json`. These are neccessary for this tool to operate!
+To begin with, make sure to install the depedencies `ffmpeg` and `vgmstream`. This is platform-specific and can be figured out easily enough.
 
 After that, it's as easy as it can get.
 
