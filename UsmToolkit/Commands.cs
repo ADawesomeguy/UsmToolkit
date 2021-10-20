@@ -109,22 +109,6 @@ namespace UsmToolkit
             var audioFormat = usmStream.FinalAudioExtension;
             var pureFileName = Path.GetFileNameWithoutExtension(usmStream.FilePath);
 
-            if (audioFormat == ".adx")
-            {
-                //ffmpeg can not handle .adx from 0.2 for whatever reason
-                //need vgmstream to format that to wav
-                if (!Directory.Exists("vgmstream"))
-                {
-                    Console.WriteLine("ERROR: vgmstream folder not found!");
-                    return;
-                }
-
-                Console.WriteLine("adx audio detected, convert to wav...");
-                Helpers.ExecuteProcess("vgmstream/test.exe", $"\"{Path.ChangeExtension(usmStream.FilePath, usmStream.FinalAudioExtension)}\" -o \"{Path.ChangeExtension(usmStream.FilePath, "wav")}\"");
-
-                usmStream.FinalAudioExtension = ".wav";
-            }
-
             Helpers.ExecuteProcess("ffmpeg", Helpers.CreateFFmpegParameters(usmStream, pureFileName, OutputDir));
 
             if (CleanTempFiles)
