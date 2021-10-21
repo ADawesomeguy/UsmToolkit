@@ -4,7 +4,7 @@ Tool to convert USM video files into user-friendly formats.
 
 ## Getting started
 
-To begin with, make sure to install the depedencies `ffmpeg` and `vgmstream`. This is platform-specific and can be figured out easily enough.
+To begin with, make sure to install the dependency `ffmpeg`. This is platform-specific and can be figured out easily enough.
 
 After that, it's as easy as it can get.
 
