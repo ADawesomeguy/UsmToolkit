@@ -1,4 +1,4 @@
-Moved to https://git.adawesome.tech/abheekd/usm-toolkit
+Moved to https://git.adawesome.tech/abheekd/usm-toolkit  
 Releases are automatically packaged at https://git.adawesome.tech/abheekd/usm-toolkit/releases
 
 # UsmToolkit
