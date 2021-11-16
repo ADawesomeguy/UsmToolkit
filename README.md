@@ -1,3 +1,6 @@
+Moved to https://git.adawesome.tech/abheekd/usm-toolkit
+Releases are automatically packaged at https://git.adawesome.tech/abheekd/usm-toolkit/releases
+
 # UsmToolkit
 
 Tool to convert USM video files into user-friendly formats.
